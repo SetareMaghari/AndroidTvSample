@@ -1,12 +1,11 @@
 package ir.iodroid.androidtvsample
 
-import android.support.v17.leanback.widget.Presenter
 import android.view.ViewGroup
 import android.view.Gravity
 import android.graphics.Color
-import android.support.v4.content.ContextCompat
 import android.widget.TextView
-
+import androidx.core.content.ContextCompat
+import androidx.leanback.widget.Presenter
 
 
 class ItemsPresenter : Presenter() {

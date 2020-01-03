@@ -2,13 +2,12 @@ package ir.iodroid.androidtvsample
 
 
 import android.os.Bundle
-import android.support.v17.leanback.app.BrowseSupportFragment
-import android.support.v17.leanback.widget.ArrayObjectAdapter
-import android.support.v17.leanback.widget.HeaderItem
-import android.support.v17.leanback.widget.ListRow
-import android.support.v17.leanback.widget.ListRowPresenter
-import android.support.v4.content.ContextCompat
-
+import androidx.core.content.ContextCompat
+import androidx.leanback.app.BrowseSupportFragment
+import androidx.leanback.widget.ArrayObjectAdapter
+import androidx.leanback.widget.HeaderItem
+import androidx.leanback.widget.ListRow
+import androidx.leanback.widget.ListRowPresenter
 
 class MainFragment : BrowseSupportFragment() {
     private var rowsAdapter: ArrayObjectAdapter? = null
