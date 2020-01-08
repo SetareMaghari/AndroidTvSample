@@ -17,17 +17,19 @@ class MainFragment : BrowseSupportFragment() {
 
         title = "IODROID"
         headersState = HEADERS_ENABLED
-
+        showTitle(true)
         badgeDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.banner)
         brandColor = ContextCompat.getColor(requireContext(), R.color.headers_background)
 
-        loadListItems()
+        makeListItems()
     }
 
-    private fun loadListItems() {
+    private fun makeListItems() {
         rowsAdapter = ArrayObjectAdapter(ListRowPresenter())
 
         val headerItem = HeaderItem(0, "FirstRow")
+        val headerItem1 = HeaderItem(1, "SecondRow")
+        val headerItem2 = HeaderItem(2, "ThirdRow")
         val itemsPresenter = ItemsPresenter()
 
         val rowAdapter = ArrayObjectAdapter(itemsPresenter).apply {
@@ -36,6 +38,8 @@ class MainFragment : BrowseSupportFragment() {
             add("ITEM 3")
         }
         rowsAdapter?.add(ListRow(headerItem, rowAdapter))
+        rowsAdapter?.add(ListRow(headerItem1, rowAdapter))
+        rowsAdapter?.add(ListRow(headerItem2, rowAdapter))
 
         adapter = rowsAdapter
     }
