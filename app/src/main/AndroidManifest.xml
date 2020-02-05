@@ -10,6 +10,8 @@
      true:  your app runs on only TV
      false: your app runs on phone and TV
     -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-feature
             android:name="android.software.leanback"
             android:required="true"/>
@@ -19,7 +21,9 @@
             android:banner="@drawable/banner"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Leanback">
+        android:usesCleartextTraffic="true"
+
+        android:theme="@style/Theme.Leanback">
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
