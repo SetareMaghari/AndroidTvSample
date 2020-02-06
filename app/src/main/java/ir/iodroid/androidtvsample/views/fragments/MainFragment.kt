@@ -1,4 +1,4 @@
-package ir.iodroid.androidtvsample
+package ir.iodroid.androidtvsample.views.fragments
 
 
 import android.os.Bundle
@@ -8,20 +8,42 @@ import androidx.leanback.widget.ArrayObjectAdapter
 import androidx.leanback.widget.HeaderItem
 import androidx.leanback.widget.ListRow
 import androidx.leanback.widget.ListRowPresenter
+import androidx.leanback.widget.OnItemViewSelectedListener
+import ir.iodroid.androidtvsample.R
 import ir.iodroid.androidtvsample.models.Movie
+import ir.iodroid.androidtvsample.utils.TvBackgroundManager
+import ir.iodroid.androidtvsample.views.activities.MainActivity
+import ir.iodroid.androidtvsample.views.presenters.ItemsPresenter
 import ir.iodroid.androidtvsample.views.presenters.MovieViewPresenter
 
 class MainFragment : BrowseSupportFragment() {
-
+    private val tvBackgroundManager: TvBackgroundManager by lazy {
+        TvBackgroundManager(activity as MainActivity).apply {
+            clearBackground()
+        }
+    }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         headersState = HEADERS_ENABLED
         showTitle(true)
-        badgeDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.banner)
-        brandColor = ContextCompat.getColor(requireContext(), R.color.headers_background)
+        badgeDrawable = ContextCompat.getDrawable(requireContext(),
+            R.drawable.banner
+        )
+        brandColor = ContextCompat.getColor(requireContext(),
+            R.color.headers_background
+        )
 
         makeListItems()
+
+        onItemViewSelectedListener =
+            OnItemViewSelectedListener { viewHolder, item, rowViewHolder, row ->
+                if (item is Movie){
+                    tvBackgroundManager.updateBackground(item.coverUrl)
+                }else{
+                    tvBackgroundManager.clearBackground()
+                }
+            }
     }
 
     private fun makeListItems() {
@@ -32,7 +54,8 @@ class MainFragment : BrowseSupportFragment() {
         val headerItem1 = HeaderItem(1, "SecondRow")
         val headerItem2 = HeaderItem(2, "ThirdRow")
         val movieViewPresenter = MovieViewPresenter(requireContext())
-        val itemsPresenter = ItemsPresenter()
+        val itemsPresenter =
+            ItemsPresenter()
 
         val itemRowAdapter = ArrayObjectAdapter(itemsPresenter).apply {
             add("ITEM 1")

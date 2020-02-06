@@ -1,4 +1,4 @@
-package ir.iodroid.androidtvsample
+package ir.iodroid.androidtvsample.views.presenters
 
 import android.view.ViewGroup
 import android.view.Gravity
@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.leanback.widget.Presenter
+import ir.iodroid.androidtvsample.R
 
 
 class ItemsPresenter : Presenter() {
@@ -14,7 +15,9 @@ class ItemsPresenter : Presenter() {
             layoutParams = ViewGroup.LayoutParams(300, 100)
             //make the item focusable while using TV's remote control
             isFocusable = true
-            setBackgroundColor(ContextCompat.getColor(parent?.context!!, R.color.primary))
+            setBackgroundColor(ContextCompat.getColor(parent?.context!!,
+                R.color.primary
+            ))
             setTextColor(Color.WHITE)
             gravity = Gravity.CENTER
         }

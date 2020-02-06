@@ -3,7 +3,7 @@
           xmlns:app="http://schemas.android.com/apk/res-auto"
           xmlns:tools="http://schemas.android.com/tools"
           android:id="@+id/main_browse_fragment"
-          android:name="ir.iodroid.androidtvsample.MainFragment"
+          android:name="ir.iodroid.androidtvsample.views.fragments.MainFragment"
           android:layout_width="match_parent"
-          android:layout_height="match_parent" tools:context=".MainActivity" tools:deviceIds="tv"
+          android:layout_height="match_parent" tools:context=".views.activities.MainActivity" tools:deviceIds="tv"
           tools:ignore="MergeRootFrame" />

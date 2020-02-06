@@ -1,7 +1,8 @@
-package ir.iodroid.androidtvsample
+package ir.iodroid.androidtvsample.views.activities
 
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
+import ir.iodroid.androidtvsample.R
 
 class MainActivity : FragmentActivity() {
 
