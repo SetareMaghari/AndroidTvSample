@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_fragment"
+    android:name="ir.iodroid.androidtvsample.views.fragments.MovieDetailsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activities.MovieDetailsActivity" tools:deviceIds="tv"
+    tools:ignore="MergeRootFrame" />
