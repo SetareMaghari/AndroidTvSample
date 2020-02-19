@@ -24,6 +24,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Leanback"
         android:usesCleartextTraffic="true">
+        <activity android:name=".views.activities.ErrorActivity"/>
         <activity android:name=".views.activities.GuidedStepActivity"
             android:theme="@style/Theme.Custom.Leanback.GuidedStep"></activity>
         <activity android:name=".views.activities.MainActivity">

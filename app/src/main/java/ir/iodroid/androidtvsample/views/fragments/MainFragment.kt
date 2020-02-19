@@ -14,6 +14,7 @@ import androidx.leanback.widget.OnItemViewSelectedListener
 import ir.iodroid.androidtvsample.R
 import ir.iodroid.androidtvsample.models.Movie
 import ir.iodroid.androidtvsample.utils.TvBackgroundManager
+import ir.iodroid.androidtvsample.views.activities.ErrorActivity
 import ir.iodroid.androidtvsample.views.activities.MainActivity
 import ir.iodroid.androidtvsample.views.activities.MovieDetailsActivity
 import ir.iodroid.androidtvsample.views.presenters.ItemsPresenter
@@ -52,9 +53,10 @@ class MainFragment : BrowseSupportFragment() {
             if (item is Movie){
                 startActivity(Intent(activity, MovieDetailsActivity::class.java).putExtra(MovieDetailsFragment.EXTRA_MOVIE
                     , item))
+            }else{
+                startActivity(Intent(requireContext(), ErrorActivity::class.java))
             }
         }
-
     }
 
     private fun makeListItems() {
