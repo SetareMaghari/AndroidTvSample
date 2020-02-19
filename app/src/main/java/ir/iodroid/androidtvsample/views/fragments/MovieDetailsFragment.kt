@@ -1,9 +1,11 @@
 package ir.iodroid.androidtvsample.views.fragments
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Parcelable
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.leanback.app.DetailsSupportFragment
 import androidx.leanback.widget.*
@@ -13,6 +15,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import ir.iodroid.androidtvsample.R
 import ir.iodroid.androidtvsample.models.Movie
+import ir.iodroid.androidtvsample.views.activities.GuidedStepActivity
 import ir.iodroid.androidtvsample.views.presenters.MovieDetailsDescriptionPresenter
 import ir.iodroid.androidtvsample.views.presenters.MovieViewPresenter
 
@@ -112,6 +115,14 @@ class MovieDetailsFragment : DetailsSupportFragment() {
                     ContextCompat.getDrawable(requireContext(), R.drawable.ic_thumb_up_white_24dp)
             })
             add(Action(3, "Watch Trailer"))
+
+            setOnItemViewClickedListener { itemViewHolder, item, rowViewHolder, row ->
+                if (item is Action){
+                    if (item.id == 1L){
+                        startActivity(Intent(requireContext(), GuidedStepActivity::class.java))
+                    }
+                }
+            }
         }
         detailOverviewRow.actionsAdapter = actionsAdapter
     }
