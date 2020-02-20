@@ -13,7 +13,6 @@ class ErrorViewFragment : ErrorSupportFragment() {
         title = "Oooops :("
         imageDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.lb_ic_sad_cloud)
         message = "NO Internet connection!"
-        setDefaultBackground(false)
         buttonText = "Back to home"
         buttonClickListener = View.OnClickListener {
             activity?.finish()
