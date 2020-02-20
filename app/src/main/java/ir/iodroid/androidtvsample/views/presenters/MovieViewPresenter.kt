@@ -34,7 +34,7 @@ class MovieViewPresenter(private val context: Context): Presenter() {
         init {
             imageCardView.apply {
                 isFocusable = true
-                cardType = BaseCardView.CARD_TYPE_MAIN_ONLY
+                cardType = BaseCardView.CARD_TYPE_INFO_UNDER
                 infoVisibility = BaseCardView.CARD_REGION_VISIBLE_ALWAYS
                 setMainImageDimensions(300, 150)
                 badgeImage = ContextCompat.getDrawable(context, R.drawable.ic_play_circle_outline_black_24dp)

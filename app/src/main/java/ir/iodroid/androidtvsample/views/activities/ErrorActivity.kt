@@ -10,8 +10,7 @@ class ErrorActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_error)
-        val mErrorFragment = ErrorViewFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragment_error_root, mErrorFragment)
+        supportFragmentManager.beginTransaction().add(R.id.fragment_error_root, ErrorViewFragment())
             .commit()
     }
 }

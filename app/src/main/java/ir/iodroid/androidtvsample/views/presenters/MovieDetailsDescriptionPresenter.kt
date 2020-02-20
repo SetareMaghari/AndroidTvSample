@@ -7,7 +7,7 @@ class MovieDetailsDescriptionPresenter : AbstractDetailsDescriptionPresenter() {
     override fun onBindDescription(
         viewHolder: ViewHolder,
         item: Any
-    ) {
+        ) {
         val movie =
             item as? Movie
         if (movie != null) {
